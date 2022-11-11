@@ -27,19 +27,13 @@ root = tree.getroot()
 for i in root:
     print(i)
     
-    #查看xml文件里面的的路径名
-#看输出的路径就知道，不能直接使用
-for name in root.iter('path'):
-    print(name.text)
-    rect['path'] = name.text
-    print(rect['path'])
     
     for i in root.iter('object'):
     print(i)
     for j in i.iter('bndbox'):
         print(j)
         
-        #清空temp.txt文档
+ #清空temp.txt文档
 with open('/home/aistudio/work/temp.txt', 'w') as fc:
     fc.seek(0)
     fc.truncate()
@@ -106,7 +100,6 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 扬眉线蛱蝶
 黄钩蛱蝶
 大紫琉璃灰蝶
-大紫琉璃灰蝶
 碧凤蝶
 银斑豹蛱蝶
 扬眉线蛱蝶
@@ -132,23 +125,12 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 网蛱蝶
 牧女珍眼蝶
 绢蛱蝶
-绢蛱蝶
-绢蛱蝶
-绢蛱蝶
-绢蛱蝶
-绢蛱蝶
-绢蛱蝶
-绢蛱蝶
-绢蛱蝶
-绢蛱蝶
-绢蛱蝶
 蓝凤蝶
 碧凤蝶
 素弄蝶
 巴黎翠凤蝶
 阿芬眼蝶
 大翅绢粉蝶
-亮灰蝶
 亮灰蝶
 红襟粉蝶
 银斑豹蛱蝶
@@ -206,8 +188,6 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 直纹稻弄蝶
 黄钩蛱蝶
 柑橘凤蝶
-宽边黄粉蝶
-宽边黄粉蝶
 宽边黄粉蝶
 扬眉线蛱蝶
 线灰蝶
@@ -275,19 +255,13 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 碧凤蝶
 花弄蝶
 碧凤蝶
-碧凤蝶
-碧凤蝶
 老豹蛱蝶
 扬眉线蛱蝶
 柑橘凤蝶
 碧凤蝶
-碧凤蝶
 虎斑蝶
 红基美凤蝶
 阿芬眼蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
 银斑豹蛱蝶
 柑橘凤蝶
 艳灰蝶
@@ -322,8 +296,6 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 碧凤蝶
 花弄蝶
 西门珍眼蝶
-亮灰蝶
-亮灰蝶
 亮灰蝶
 红基美凤蝶
 碧凤蝶
@@ -407,12 +379,6 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 碧凤蝶
 蓝灰蝶
 绢蛱蝶
-绢蛱蝶
-绢蛱蝶
-绢蛱蝶
-绢蛱蝶
-绢蛱蝶
-绢蛱蝶
 翠袖锯眼蝶
 菜粉蝶
 琉璃蛱蝶
@@ -422,8 +388,6 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 翠袖锯眼蝶
 小红蛱蝶
 扬眉线蛱蝶
-宽边黄粉蝶
-宽边黄粉蝶
 宽边黄粉蝶
 曲斑珠蛱蝶
 红灰蝶
@@ -446,21 +410,6 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 碧凤蝶
 红基美凤蝶
 银斑豹蛱蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
-红基美凤蝶
 红基美凤蝶
 银斑豹蛱蝶
 老豹蛱蝶
@@ -477,8 +426,6 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 琉璃蛱蝶
 翠袖锯眼蝶
 雅弄蝶
-阿芬眼蝶
-阿芬眼蝶
 阿芬眼蝶
 翠袖锯眼蝶
 依帕绢蝶
@@ -500,22 +447,11 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 红基美凤蝶
 翠袖锯眼蝶
 红基美凤蝶
-红基美凤蝶
 雅弄蝶
 红基美凤蝶
 翠袖锯眼蝶
 巴黎翠凤蝶
-巴黎翠凤蝶
-巴黎翠凤蝶
-巴黎翠凤蝶
-巴黎翠凤蝶
-巴黎翠凤蝶
-巴黎翠凤蝶
-巴黎翠凤蝶
-巴黎翠凤蝶
-巴黎翠凤蝶
 银斑豹蛱蝶
-碧凤蝶
 碧凤蝶
 锦瑟蛱蝶
 红灰蝶
@@ -529,7 +465,6 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 阿芬眼蝶
 碧凤蝶
 银斑豹蛱蝶
-银斑豹蛱蝶
 银豹蛱蝶
 银斑豹蛱蝶
 蓝点紫斑蝶
@@ -538,18 +473,12 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 青凤蝶
 线灰蝶
 金裳凤蝶
-金裳凤蝶
-亮灰蝶
-亮灰蝶
 亮灰蝶
 雅弄蝶
 蛇目褐蚬蝶
 翠袖锯眼蝶
 无斑珂弄蝶
 宽边黄粉蝶
-宽边黄粉蝶
-宽边黄粉蝶
-素弄蝶
 素弄蝶
 大紫琉璃灰蝶
 阿芬眼蝶
@@ -558,13 +487,6 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 婀灰蝶
 婀灰蝶
 大卫粉蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
 银斑豹蛱蝶
 网蛱蝶
 碧凤蝶
@@ -587,22 +509,15 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 无斑珂弄蝶
 蛇目褐蚬蝶
 大紫琉璃灰蝶
-大紫琉璃灰蝶
-大紫琉璃灰蝶
-大紫琉璃灰蝶
 蓝点紫斑蝶
 巴黎翠凤蝶
 大卫粉蝶
 扬眉线蛱蝶
 玄珠带蛱蝶
-大紫琉璃灰蝶
-大紫琉璃灰蝶
 银斑豹蛱蝶
 阿芬眼蝶
 白眼蝶
 翠袖锯眼蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
 花弄蝶
 红基美凤蝶
 直纹稻弄蝶
@@ -615,7 +530,6 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 碧凤蝶
 波太玄灰蝶
 扬眉线蛱蝶
-扬眉线蛱蝶
 黄环蛱蝶
 大紫琉璃灰蝶
 青凤蝶
@@ -627,8 +541,6 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 素弄蝶
 灿福蛱蝶
 碧凤蝶
-碧凤蝶
-亮灰蝶
 亮灰蝶
 玄灰蝶
 阿芬眼蝶
@@ -647,8 +559,6 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 碧凤蝶
 素弄蝶
 亮灰蝶
-亮灰蝶
-亮灰蝶
 巴黎翠凤蝶
 翠袖锯眼蝶
 素弄蝶
@@ -657,15 +567,12 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 伊诺小豹蛱蝶
 网蛱蝶
 银斑豹蛱蝶
-银斑豹蛱蝶
 柑橘凤蝶
 青凤蝶
-宽边黄粉蝶
 宽边黄粉蝶
 扬眉线蛱蝶
 菩萨酒眼蝶
 橙黄豆粉蝶
-婀灰蝶
 婀灰蝶
 玄珠带蛱蝶
 黄环蛱蝶
@@ -674,7 +581,6 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 大紫琉璃灰蝶
 尖翅翠蛱蝶
 蓝点紫斑蝶
-亮灰蝶
 亮灰蝶
 红灰蝶
 直纹稻弄蝶
@@ -721,12 +627,6 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 古北拟酒眼蝶
 柑橘凤蝶
 银斑豹蛱蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
-银斑豹蛱蝶
 素弄蝶
 阿芬眼蝶
 黄钩蛱蝶
@@ -736,11 +636,8 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 大紫琉璃灰蝶
 线灰蝶
 亮灰蝶
-亮灰蝶
 绢粉蝶
 链环蛱蝶
-碧凤蝶
-碧凤蝶
 碧凤蝶
 柑橘凤蝶
 阿芬眼蝶
@@ -757,7 +654,6 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 柱菲蛱蝶
 巴黎翠凤蝶
 银斑豹蛱蝶
-银斑豹蛱蝶
 白眼蝶
 红基美凤蝶
 翠袖锯眼蝶
@@ -767,9 +663,6 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 翠袖锯眼蝶
 朴喙蝶
 阿芬眼蝶
-阿芬眼蝶
-阿芬眼蝶
-柑橘凤蝶
 柑橘凤蝶
 波太玄灰蝶
 蛇目褐蚬蝶
@@ -794,10 +687,6 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 大紫琉璃灰蝶
 突角小粉蝶
 银斑豹蛱蝶
-绢蛱蝶
-绢蛱蝶
-绢蛱蝶
-绢蛱蝶
 绢蛱蝶
 素弄蝶
 素弄蝶
@@ -828,7 +717,6 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 蓝灰蝶
 柑橘凤蝶
 碧凤蝶
-碧凤蝶
 银斑豹蛱蝶
 大紫琉璃灰蝶
 阿芬眼蝶
@@ -838,10 +726,6 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 碧凤蝶
 蛇目褐蚬蝶
 银斑豹蛱蝶
-银斑豹蛱蝶
-碧凤蝶
-碧凤蝶
-碧凤蝶
 突角小粉蝶
 直纹稻弄蝶
 网蛱蝶
@@ -853,7 +737,6 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 雅弄蝶
 阿芬眼蝶
 隐纹谷弄蝶
-银斑豹蛱蝶
 银斑豹蛱蝶
 云豹蛱蝶
 巴黎翠凤蝶
@@ -873,7 +756,6 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 银斑豹蛱蝶
 翠袖锯眼蝶
 线灰蝶
-线灰蝶
 雅弄蝶
 柑橘凤蝶
 巴黎翠凤蝶
@@ -883,9 +765,9 @@ with open('/home/aistudio/work/temp.txt', 'w') as fc:
 黄钩蛱蝶
 突角小粉蝶
 银斑豹蛱蝶
-银斑豹蛱蝶
 珍珠绢蝶
 
+#去重
 # -*- coding:utf-8 -*-
 #! python2
 import shutil
@@ -932,7 +814,7 @@ CLASSES = ['person']
          print(v)
          f.write(v+'\n')
          
-         train_dataset = pdx.datasets.VOCDetection(
+    train_dataset = pdx.datasets.VOCDetection(
     data_dir='/home/aistudio/data',
     file_list='/home/aistudio/work/train.txt',
     label_list='/home/aistudio/work/label.txt',
@@ -944,7 +826,7 @@ eval_dataset = pdx.datasets.VOCDetection(
     label_list='/home/aistudio/work/label.txt',
     transforms=eval_transforms)
     
-    # 训练可视化VisualDL工具的回调函数
+# 训练可视化VisualDL工具的回调函数
 #visualdl = paddle.callbacks.VisualDL(log_dir='visualdl_log')
 
 num_classes = len(train_dataset.labels) + 1
@@ -968,13 +850,7 @@ import paddlex as pdx
 #model = pdx.load_model('/home/aistudio/faster_rcnn_r50_fpn/epoch_42')
 model = pdx.load_model('/home/aistudio/model/epoch_24')
 
-#预测图片路径
-name='IMG_000140.jpg'
-pathdir='/home/aistudio/data/TestData/'
-image_name = pathdir + name
 
-#image_name = '/home/aistudio/data/JPEGImages/IMG_000029.jpg'
-#image_name = '/home/aistudio/work/test/3402.jpg'
 
 result = model.predict(image_name)
 pdx.det.visualize(image_name, result, threshold=0.4, save_dir='/home/aistudio/work/output1')
@@ -986,14 +862,6 @@ for r in result:
         #print(r)
         print(r['category'],":",r['score'])
         
-        #获取文件路径列表代码样例
-import os
-# 获取文件名
-file_names = os.listdir("./data/")
-print(file_names)
-# 文件名拼接路径
-file_list = [os.path.join("./data/",file) for file in file_names]
-print(file_list)
 
 import paddlex as pdx
 import os
