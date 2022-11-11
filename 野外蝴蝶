@@ -62,23 +62,3 @@ model.train(
     use_ema=True,
     save_dir='output/picodet_esnet_l_2',
     use_vdl=True)
-Exception in thread Thread-8:
-Traceback (most recent call last):
-  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddle/fluid/dataloader/dataloader_iter.py", line 616, in _get_data
-    data = self._data_queue.get(timeout=self._timeout)
-  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/multiprocessing/queues.py", line 105, in get
-    raise Empty
-_queue.Empty
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/threading.py", line 926, in _bootstrap_inner
-    self.run()
-  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/threading.py", line 870, in run
-    self._target(*self._args, **self._kwargs)
-  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddle/fluid/dataloader/dataloader_iter.py", line 530, in _thread_loop
-    batch = self._get_data()
-  File "/opt/conda/envs/python35-paddle120-env/lib/python3.7/site-packages/paddle/fluid/dataloader/dataloader_iter.py", line 632, in _get_data
-    "pids: {}".format(len(failed_workers), pids))
-RuntimeError: DataLoader 2 workers exit unexpectedly, pids: 1601, 1602
