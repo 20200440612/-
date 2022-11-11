@@ -1,0 +1,1011 @@
+import os
+import zipfile
+
+#解压数据集
+os.chdir('/home/aistudio/data/data90914')
+extracting = zipfile.ZipFile('TrainData.zip')
+extracting.extractall('/home/aistudio/data')
+
+#解压标注文档
+os.chdir('/home/aistudio/train_xml')
+extracting = zipfile.ZipFile('Annotations.zip')
+extracting.extractall('/home/aistudio/data')
+
+import matplotlib.pyplot as plt
+import PIL.Image as Image
+
+path='/home/aistudio/data/JPEGImages/IMG_000719.jpg'
+img = Image.open(path)
+plt.imshow(img)          #根据数组绘制图像
+plt.show()               #显示图像
+
+#查看dir中的第二个元素(index=1)
+tree = ET.parse(source + '/' + dir[1])
+rect = {}
+line = ""
+root = tree.getroot()
+for i in root:
+    print(i)
+    
+    #查看xml文件里面的的路径名
+#看输出的路径就知道，不能直接使用
+for name in root.iter('path'):
+    print(name.text)
+    rect['path'] = name.text
+    print(rect['path'])
+    
+    for i in root.iter('object'):
+    print(i)
+    for j in i.iter('bndbox'):
+        print(j)
+        
+        #清空temp.txt文档
+with open('/home/aistudio/work/temp.txt', 'w') as fc:
+    fc.seek(0)
+    fc.truncate()
+    print("清空数据")
+    
+    for i in range(len(dir)):
+    tree = ET.parse(source + '/' + dir[i])
+    rect = {}
+    line = ""
+    root = tree.getroot()
+    with open('/home/aistudio/work/temp.txt', 'a', encoding='utf-8') as f1:
+        
+        for ob in root.iter('object'):
+            # 文本信息，这个循环应该在for bndbox 外面的，才合理
+            for t in ob.iter('name'):
+                print(t.text)
+                f1.write(t.text + '\n')
+黄钩蛱蝶
+橙黄豆粉蝶
+红基美凤蝶
+柑橘凤蝶
+线灰蝶
+拟稻眉眼蝶
+黄钩蛱蝶
+波太玄灰蝶
+银斑豹蛱蝶
+雅弄蝶
+银斑豹蛱蝶
+阿芬眼蝶
+素弄蝶
+蟾福蛱蝶
+婀灰蝶
+银斑豹蛱蝶
+柳紫闪蛱蝶
+青海红珠灰蝶
+银斑豹蛱蝶
+琉璃蛱蝶
+虬眉带蛱蝶
+翠袖锯眼蝶
+翠袖锯眼蝶
+秀蛱蝶
+青海红珠灰蝶
+碧凤蝶
+蛇目褐蚬蝶
+银斑豹蛱蝶
+扬眉线蛱蝶
+碧凤蝶
+玄灰蝶
+蓝点紫斑蝶
+柑橘凤蝶
+翠袖锯眼蝶
+金裳凤蝶
+扬眉线蛱蝶
+绿豹蛱蝶
+银斑豹蛱蝶
+蛇目褐蚬蝶
+网蛱蝶
+素弄蝶
+蟾福蛱蝶
+灿福蛱蝶
+尖翅翠蛱蝶
+翠袖锯眼蝶
+银斑豹蛱蝶
+扬眉线蛱蝶
+黄钩蛱蝶
+大紫琉璃灰蝶
+大紫琉璃灰蝶
+碧凤蝶
+银斑豹蛱蝶
+扬眉线蛱蝶
+波太玄灰蝶
+宽边黄粉蝶
+阿芬眼蝶
+阿芬眼蝶
+碧凤蝶
+碧凤蝶
+素弄蝶
+红基美凤蝶
+翠袖锯眼蝶
+柑橘凤蝶
+绿豹蛱蝶
+扬眉线蛱蝶
+翠袖锯眼蝶
+蓝凤蝶
+珍珠绢蝶
+美眼蛱蝶
+银斑豹蛱蝶
+碧凤蝶
+蛇目褐蚬蝶
+网蛱蝶
+牧女珍眼蝶
+绢蛱蝶
+绢蛱蝶
+绢蛱蝶
+绢蛱蝶
+绢蛱蝶
+绢蛱蝶
+绢蛱蝶
+绢蛱蝶
+绢蛱蝶
+绢蛱蝶
+绢蛱蝶
+蓝凤蝶
+碧凤蝶
+素弄蝶
+巴黎翠凤蝶
+阿芬眼蝶
+大翅绢粉蝶
+亮灰蝶
+亮灰蝶
+红襟粉蝶
+银斑豹蛱蝶
+黎明豆粉蝶
+宽边黄粉蝶
+雅弄蝶
+蓝凤蝶
+婀灰蝶
+黄钩蛱蝶
+银斑豹蛱蝶
+阿芬眼蝶
+伊诺小豹蛱蝶
+黄钩蛱蝶
+大翅绢粉蝶
+花弄蝶
+蓝点紫斑蝶
+扬眉线蛱蝶
+斐豹蛱蝶
+柑橘凤蝶
+雅弄蝶
+巴黎翠凤蝶
+碧凤蝶
+花弄蝶
+大紫琉璃灰蝶
+花弄蝶
+柳紫闪蛱蝶
+荨麻蛱蝶
+线灰蝶
+宽边黄粉蝶
+小红蛱蝶
+银斑豹蛱蝶
+素弄蝶
+巴黎翠凤蝶
+阿芬眼蝶
+亮灰蝶
+亮灰蝶
+绿豹蛱蝶
+灿福蛱蝶
+雅弄蝶
+柳紫闪蛱蝶
+银斑豹蛱蝶
+柑橘凤蝶
+素弄蝶
+大紫琉璃灰蝶
+翠袖锯眼蝶
+黄钩蛱蝶
+直纹稻弄蝶
+宽边黄粉蝶
+翠蓝眼蛱蝶
+翠蓝眼蛱蝶
+阿芬眼蝶
+扬眉线蛱蝶
+宽边黄粉蝶
+隐纹谷弄蝶
+直纹稻弄蝶
+黄钩蛱蝶
+柑橘凤蝶
+宽边黄粉蝶
+宽边黄粉蝶
+宽边黄粉蝶
+扬眉线蛱蝶
+线灰蝶
+素弄蝶
+柑橘凤蝶
+阿芬眼蝶
+大紫琉璃灰蝶
+宽边黄粉蝶
+白眼蝶
+古北拟酒眼蝶
+阿芬眼蝶
+侏粉蝶
+蛇目褐蚬蝶
+蓝凤蝶
+牧女珍眼蝶
+银斑豹蛱蝶
+小红蛱蝶
+宽边黄粉蝶
+巴黎翠凤蝶
+素弄蝶
+阿芬眼蝶
+柑橘凤蝶
+伊诺小豹蛱蝶
+隐纹谷弄蝶
+亮灰蝶
+亮灰蝶
+朴喙蝶
+巴黎翠凤蝶
+黄环蛱蝶
+婀灰蝶
+阿芬眼蝶
+咖灰蝶
+荨麻蛱蝶
+大紫琉璃灰蝶
+牧女珍眼蝶
+大紫琉璃灰蝶
+蟾福蛱蝶
+花弄蝶
+婀灰蝶
+大紫琉璃灰蝶
+依帕绢蝶
+美眼蛱蝶
+阿芬眼蝶
+红基美凤蝶
+巴黎翠凤蝶
+扬眉线蛱蝶
+大紫琉璃灰蝶
+蛇目褐蚬蝶
+素弄蝶
+无斑珂弄蝶
+扬眉线蛱蝶
+雅弄蝶
+碧凤蝶
+大紫琉璃灰蝶
+密纹飒弄蝶
+黄钩蛱蝶
+箭纹绢粉蝶
+荨麻蛱蝶
+宽边黄粉蝶
+花弄蝶
+扬眉线蛱蝶
+箭纹云粉蝶
+青海红珠灰蝶
+网蛱蝶
+碧凤蝶
+花弄蝶
+碧凤蝶
+碧凤蝶
+碧凤蝶
+老豹蛱蝶
+扬眉线蛱蝶
+柑橘凤蝶
+碧凤蝶
+碧凤蝶
+虎斑蝶
+红基美凤蝶
+阿芬眼蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+柑橘凤蝶
+艳灰蝶
+雅弄蝶
+银斑豹蛱蝶
+突角小粉蝶
+绿豹蛱蝶
+云粉蝶
+花弄蝶
+阿芬眼蝶
+大翅绢粉蝶
+宽边黄粉蝶
+宽边黄粉蝶
+伊诺小豹蛱蝶
+白钩蛱蝶
+柱菲蛱蝶
+花弄蝶
+西门珍眼蝶
+大紫琉璃灰蝶
+黄钩蛱蝶
+巴黎翠凤蝶
+红灰蝶
+红灰蝶
+碧凤蝶
+黄钩蛱蝶
+银斑豹蛱蝶
+柑橘凤蝶
+扬眉线蛱蝶
+白眼蝶
+镉黄迁粉蝶
+巴黎翠凤蝶
+碧凤蝶
+花弄蝶
+西门珍眼蝶
+亮灰蝶
+亮灰蝶
+亮灰蝶
+红基美凤蝶
+碧凤蝶
+雅弄蝶
+黄环蛱蝶
+婀灰蝶
+素弄蝶
+银斑豹蛱蝶
+青凤蝶
+拟稻眉眼蝶
+雅弄蝶
+黄钩蛱蝶
+伊诺小豹蛱蝶
+朴喙蝶
+阿芬眼蝶
+碧凤蝶
+碧凤蝶
+维纳斯眼灰蝶
+秀蛱蝶
+蓝凤蝶
+无斑珂弄蝶
+黄钩蛱蝶
+扬眉线蛱蝶
+扬眉线蛱蝶
+大紫琉璃灰蝶
+黄钩蛱蝶
+扬眉线蛱蝶
+雅弄蝶
+银斑豹蛱蝶
+蛇目褐蚬蝶
+红基美凤蝶
+大紫琉璃灰蝶
+边纹黛眼蝶
+线灰蝶
+素弄蝶
+巴黎翠凤蝶
+碧凤蝶
+古北拟酒眼蝶
+黄环蛱蝶
+咖灰蝶
+扬眉线蛱蝶
+箭纹绢粉蝶
+扬眉线蛱蝶
+银斑豹蛱蝶
+蓝凤蝶
+小黄斑弄蝶
+红基美凤蝶
+扬眉线蛱蝶
+蓝凤蝶
+黄环蛱蝶
+红灰蝶
+柑橘凤蝶
+大卫粉蝶
+巴黎翠凤蝶
+珍蛱蝶
+宽边黄粉蝶
+宽边黄粉蝶
+宽边黄粉蝶
+蛇目褐蚬蝶
+阿芬眼蝶
+黄环蛱蝶
+蓝点紫斑蝶
+碧凤蝶
+红基美凤蝶
+柑橘凤蝶
+箭纹绢粉蝶
+银斑豹蛱蝶
+红灰蝶
+银斑豹蛱蝶
+线灰蝶
+黄环蛱蝶
+柱菲蛱蝶
+菜粉蝶
+中环蛱蝶
+阿芬眼蝶
+云粉蝶
+箭纹云粉蝶
+青凤蝶
+素弄蝶
+银斑豹蛱蝶
+碧凤蝶
+蓝灰蝶
+绢蛱蝶
+绢蛱蝶
+绢蛱蝶
+绢蛱蝶
+绢蛱蝶
+绢蛱蝶
+绢蛱蝶
+翠袖锯眼蝶
+菜粉蝶
+琉璃蛱蝶
+大翅绢粉蝶
+碧凤蝶
+菜粉蝶
+翠袖锯眼蝶
+小红蛱蝶
+扬眉线蛱蝶
+宽边黄粉蝶
+宽边黄粉蝶
+宽边黄粉蝶
+曲斑珠蛱蝶
+红灰蝶
+扬眉线蛱蝶
+线灰蝶
+碧凤蝶
+黄环蛱蝶
+银斑豹蛱蝶
+尖翅翠蛱蝶
+箭纹云粉蝶
+尖翅翠蛱蝶
+银斑豹蛱蝶
+翠袖锯眼蝶
+阿芬眼蝶
+牧女珍眼蝶
+尖翅翠蛱蝶
+银斑豹蛱蝶
+扬眉线蛱蝶
+黄环蛱蝶
+碧凤蝶
+红基美凤蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+红基美凤蝶
+红基美凤蝶
+银斑豹蛱蝶
+老豹蛱蝶
+雅弄蝶
+银斑豹蛱蝶
+白眼蝶
+扬眉线蛱蝶
+网蛱蝶
+婀灰蝶
+翠袖锯眼蝶
+翠袖锯眼蝶
+蓝灰蝶
+绢斑蝶
+琉璃蛱蝶
+翠袖锯眼蝶
+雅弄蝶
+阿芬眼蝶
+阿芬眼蝶
+阿芬眼蝶
+翠袖锯眼蝶
+依帕绢蝶
+银斑豹蛱蝶
+阿芬眼蝶
+阿芬眼蝶
+扬眉线蛱蝶
+扬眉线蛱蝶
+碧凤蝶
+灿福蛱蝶
+云豹蛱蝶
+钩翅眼蛱蝶
+突角小粉蝶
+素弄蝶
+柱菲蛱蝶
+翠蓝眼蛱蝶
+密纹飒弄蝶
+银斑豹蛱蝶
+红基美凤蝶
+翠袖锯眼蝶
+红基美凤蝶
+红基美凤蝶
+雅弄蝶
+红基美凤蝶
+翠袖锯眼蝶
+巴黎翠凤蝶
+巴黎翠凤蝶
+巴黎翠凤蝶
+巴黎翠凤蝶
+巴黎翠凤蝶
+巴黎翠凤蝶
+巴黎翠凤蝶
+巴黎翠凤蝶
+巴黎翠凤蝶
+巴黎翠凤蝶
+银斑豹蛱蝶
+碧凤蝶
+碧凤蝶
+锦瑟蛱蝶
+红灰蝶
+银斑豹蛱蝶
+四川绢蝶
+蛇目褐蚬蝶
+柳紫闪蛱蝶
+青海红珠灰蝶
+花弄蝶
+阿芬眼蝶
+阿芬眼蝶
+碧凤蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银豹蛱蝶
+银斑豹蛱蝶
+蓝点紫斑蝶
+扬眉线蛱蝶
+宽边黄粉蝶
+青凤蝶
+线灰蝶
+金裳凤蝶
+金裳凤蝶
+亮灰蝶
+亮灰蝶
+亮灰蝶
+雅弄蝶
+蛇目褐蚬蝶
+翠袖锯眼蝶
+无斑珂弄蝶
+宽边黄粉蝶
+宽边黄粉蝶
+宽边黄粉蝶
+素弄蝶
+素弄蝶
+大紫琉璃灰蝶
+阿芬眼蝶
+链环蛱蝶
+云豹蛱蝶
+婀灰蝶
+婀灰蝶
+大卫粉蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+网蛱蝶
+碧凤蝶
+花弄蝶
+素弄蝶
+蓝凤蝶
+碧凤蝶
+巴黎翠凤蝶
+翠蓝眼蛱蝶
+波太玄灰蝶
+秀蛱蝶
+素弄蝶
+黄钩蛱蝶
+银斑豹蛱蝶
+伊诺小豹蛱蝶
+灿福蛱蝶
+黄环蛱蝶
+珍珠绢蝶
+银斑豹蛱蝶
+无斑珂弄蝶
+蛇目褐蚬蝶
+大紫琉璃灰蝶
+大紫琉璃灰蝶
+大紫琉璃灰蝶
+大紫琉璃灰蝶
+蓝点紫斑蝶
+巴黎翠凤蝶
+大卫粉蝶
+扬眉线蛱蝶
+玄珠带蛱蝶
+大紫琉璃灰蝶
+大紫琉璃灰蝶
+银斑豹蛱蝶
+阿芬眼蝶
+白眼蝶
+翠袖锯眼蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+花弄蝶
+红基美凤蝶
+直纹稻弄蝶
+大卫粉蝶
+巴黎翠凤蝶
+雅弄蝶
+大翅绢粉蝶
+柑橘凤蝶
+尖翅翠蛱蝶
+碧凤蝶
+波太玄灰蝶
+扬眉线蛱蝶
+扬眉线蛱蝶
+黄环蛱蝶
+大紫琉璃灰蝶
+青凤蝶
+碧凤蝶
+素弄蝶
+黄钩蛱蝶
+红基美凤蝶
+黄钩蛱蝶
+素弄蝶
+灿福蛱蝶
+碧凤蝶
+碧凤蝶
+亮灰蝶
+亮灰蝶
+玄灰蝶
+阿芬眼蝶
+碧凤蝶
+红基美凤蝶
+蓝凤蝶
+青海红珠灰蝶
+银斑豹蛱蝶
+黄钩蛱蝶
+翠袖锯眼蝶
+花弄蝶
+直纹稻弄蝶
+雅弄蝶
+黑网蛱蝶
+青凤蝶
+碧凤蝶
+素弄蝶
+亮灰蝶
+亮灰蝶
+亮灰蝶
+巴黎翠凤蝶
+翠袖锯眼蝶
+素弄蝶
+宽边黄粉蝶
+雅弄蝶
+伊诺小豹蛱蝶
+网蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+柑橘凤蝶
+青凤蝶
+宽边黄粉蝶
+宽边黄粉蝶
+扬眉线蛱蝶
+菩萨酒眼蝶
+橙黄豆粉蝶
+婀灰蝶
+婀灰蝶
+玄珠带蛱蝶
+黄环蛱蝶
+伊诺小豹蛱蝶
+牧女珍眼蝶
+大紫琉璃灰蝶
+尖翅翠蛱蝶
+蓝点紫斑蝶
+亮灰蝶
+亮灰蝶
+红灰蝶
+直纹稻弄蝶
+翠袖锯眼蝶
+阿芬眼蝶
+玉带凤蝶
+隐纹谷弄蝶
+巴黎翠凤蝶
+扬眉线蛱蝶
+银斑豹蛱蝶
+箭纹绢粉蝶
+扬眉线蛱蝶
+婀灰蝶
+花弄蝶
+云粉蝶
+银斑豹蛱蝶
+蟾福蛱蝶
+素弄蝶
+柑橘凤蝶
+巴黎翠凤蝶
+银斑豹蛱蝶
+波太玄灰蝶
+曲斑珠蛱蝶
+尖翅翠蛱蝶
+大紫琉璃灰蝶
+宽边黄粉蝶
+蓝点紫斑蝶
+蓝凤蝶
+青海红珠灰蝶
+白眼蝶
+扬眉线蛱蝶
+碧凤蝶
+翠袖锯眼蝶
+巴黎翠凤蝶
+秀蛱蝶
+柳紫闪蛱蝶
+扬眉线蛱蝶
+镉黄迁粉蝶
+虬眉带蛱蝶
+牧女珍眼蝶
+波太玄灰蝶
+扬眉线蛱蝶
+花弄蝶
+古北拟酒眼蝶
+柑橘凤蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+素弄蝶
+阿芬眼蝶
+黄钩蛱蝶
+碧凤蝶
+蓝灰蝶
+老豹蛱蝶
+大紫琉璃灰蝶
+线灰蝶
+亮灰蝶
+亮灰蝶
+绢粉蝶
+链环蛱蝶
+碧凤蝶
+碧凤蝶
+碧凤蝶
+柑橘凤蝶
+阿芬眼蝶
+扬眉线蛱蝶
+牧女珍眼蝶
+线灰蝶
+钩翅眼蛱蝶
+阿芬眼蝶
+宽边黄粉蝶
+翠袖锯眼蝶
+伊诺小豹蛱蝶
+黄环蛱蝶
+花弄蝶
+柱菲蛱蝶
+巴黎翠凤蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+白眼蝶
+红基美凤蝶
+翠袖锯眼蝶
+波太玄灰蝶
+花弄蝶
+红基美凤蝶
+翠袖锯眼蝶
+朴喙蝶
+阿芬眼蝶
+阿芬眼蝶
+阿芬眼蝶
+柑橘凤蝶
+柑橘凤蝶
+波太玄灰蝶
+蛇目褐蚬蝶
+荨麻蛱蝶
+碧凤蝶
+灿福蛱蝶
+宽边黄粉蝶
+巴黎翠凤蝶
+曲纹紫灰蝶
+阿芬眼蝶
+婀灰蝶
+直纹稻弄蝶
+牧女珍眼蝶
+老豹蛱蝶
+白眼蝶
+雅弄蝶
+银斑豹蛱蝶
+阿芬眼蝶
+白眼蝶
+曲纹紫灰蝶
+黄环蛱蝶
+大紫琉璃灰蝶
+突角小粉蝶
+银斑豹蛱蝶
+绢蛱蝶
+绢蛱蝶
+绢蛱蝶
+绢蛱蝶
+绢蛱蝶
+素弄蝶
+素弄蝶
+荨麻蛱蝶
+山豆粉蝶
+蓝灰蝶
+黎明豆粉蝶
+箭纹绢粉蝶
+银斑豹蛱蝶
+红基美凤蝶
+蓝点紫斑蝶
+波太玄灰蝶
+曲纹紫灰蝶
+菜粉蝶
+大卫粉蝶
+银斑豹蛱蝶
+宽边黄粉蝶
+柑橘凤蝶
+翠袖锯眼蝶
+碧凤蝶
+花弄蝶
+大紫琉璃灰蝶
+银斑豹蛱蝶
+阿芬眼蝶
+扬眉线蛱蝶
+青凤蝶
+黄钩蛱蝶
+蓝灰蝶
+柑橘凤蝶
+碧凤蝶
+碧凤蝶
+银斑豹蛱蝶
+大紫琉璃灰蝶
+阿芬眼蝶
+绢粉蝶
+珍蛱蝶
+蛇目褐蚬蝶
+碧凤蝶
+蛇目褐蚬蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+碧凤蝶
+碧凤蝶
+碧凤蝶
+突角小粉蝶
+直纹稻弄蝶
+网蛱蝶
+大紫琉璃灰蝶
+蓝点紫斑蝶
+小黄斑弄蝶
+绿豹蛱蝶
+老豹蛱蝶
+雅弄蝶
+阿芬眼蝶
+隐纹谷弄蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+云豹蛱蝶
+巴黎翠凤蝶
+银豹蛱蝶
+金裳凤蝶
+碧凤蝶
+阿芬眼蝶
+阿芬眼蝶
+素弄蝶
+青凤蝶
+艳灰蝶
+大卫粉蝶
+翠袖锯眼蝶
+巴黎翠凤蝶
+蓝点紫斑蝶
+大紫琉璃灰蝶
+银斑豹蛱蝶
+翠袖锯眼蝶
+线灰蝶
+线灰蝶
+雅弄蝶
+柑橘凤蝶
+巴黎翠凤蝶
+白眼蝶
+雅弄蝶
+咖灰蝶
+黄钩蛱蝶
+突角小粉蝶
+银斑豹蛱蝶
+银斑豹蛱蝶
+珍珠绢蝶
+
+# -*- coding:utf-8 -*-
+#! python2
+import shutil
+a = 0
+
+readDir = '/home/aistudio/work/temp.txt'  #old
+writeDir = '/home/aistudio/work/label.txt' #new
+# txtDir = "/home/Administrator/Desktop/１"
+lines_seen = set()
+outfile = open(writeDir, 'w')
+f = open(readDir, 'r')
+for line in f:
+    if line not in lines_seen:
+        a += 1
+        outfile.write(line)
+        lines_seen.add(line)
+        print(a)
+outfile.close()
+print("success")
+
+from random import shuffle, seed
+ import os
+ #base = '/root/paddlejob/workspace/code/VOC2007/'
+
+ anos = os.listdir('/home/aistudio/data/Annotations')
+ print('total:', len(anos))
+
+ #seed(666)
+ #shuffle(anos) #打乱顺序
+print(anos)
+
+#训练集txt
+with open('/home/aistudio/work/train.txt', 'w') as f:
+     for im in anos[:(len(anos)-150)]:
+         info = 'JPEGImages/'+im[:-4]+'.jpg' +' '
+         info += 'Annotations/'+im+'\n'
+         f.write(info)
+         
+         #标签
+CLASSES = ['person']
+
+ with open('/home/aistudio/work/label_list.txt', 'w+') as f:
+     for v in CLASSES:
+         print(v)
+         f.write(v+'\n')
+         
+         train_dataset = pdx.datasets.VOCDetection(
+    data_dir='/home/aistudio/data',
+    file_list='/home/aistudio/work/train.txt',
+    label_list='/home/aistudio/work/label.txt',
+    transforms=train_transforms,
+    shuffle=True)
+eval_dataset = pdx.datasets.VOCDetection(
+    data_dir='/home/aistudio/data',
+    file_list='/home/aistudio/work/val.txt',
+    label_list='/home/aistudio/work/label.txt',
+    transforms=eval_transforms)
+    
+    # 训练可视化VisualDL工具的回调函数
+#visualdl = paddle.callbacks.VisualDL(log_dir='visualdl_log')
+
+num_classes = len(train_dataset.labels) + 1
+print(num_classes)
+model = pdx.det.FasterRCNN(num_classes=num_classes)
+model.train(
+    num_epochs=36,
+    train_dataset=train_dataset,
+    train_batch_size=8,
+    eval_dataset=eval_dataset,
+    learning_rate=0.0010,
+    lr_decay_epochs=[16, 22],
+    save_interval_epochs=6,
+    save_dir='/home/aistudio/faster_rcnn_r50_fpn',
+    use_vdl=True)
+#use_vdl=True  设置use_vdl=true后会报错
+#save_dir='output/faster_rcnn_r50_fpn',
+
+import paddlex as pdx
+
+#model = pdx.load_model('/home/aistudio/faster_rcnn_r50_fpn/epoch_42')
+model = pdx.load_model('/home/aistudio/model/epoch_24')
+
+#预测图片路径
+name='IMG_000140.jpg'
+pathdir='/home/aistudio/data/TestData/'
+image_name = pathdir + name
+
+#image_name = '/home/aistudio/data/JPEGImages/IMG_000029.jpg'
+#image_name = '/home/aistudio/work/test/3402.jpg'
+
+result = model.predict(image_name)
+pdx.det.visualize(image_name, result, threshold=0.4, save_dir='/home/aistudio/work/output1')
+#print(result[0])
+for r in result:
+    if (r['score'] > 0.4):
+        #print(r['category'])
+        #print(r['score'] )
+        #print(r)
+        print(r['category'],":",r['score'])
+        
+        #获取文件路径列表代码样例
+import os
+# 获取文件名
+file_names = os.listdir("./data/")
+print(file_names)
+# 文件名拼接路径
+file_list = [os.path.join("./data/",file) for file in file_names]
+print(file_list)
+
+import paddlex as pdx
+import os
+#model = pdx.load_model('/home/aistudio/faster_rcnn_r50_fpn/epoch_42')
+model = pdx.load_model('/home/aistudio/model/epoch_24')
+
+#图片名
+base='/home/aistudio/work/test/' #目标所在文件夹
+img_names = os.listdir(base)
+print(img_names)
+#图片路径列表
+file_list = [os.path.join(base,file) for file in img_names]
+print(file_list)
+
+results=batch_predict(file_list)
